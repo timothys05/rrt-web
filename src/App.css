@@ -1,38 +1,207 @@
-.App {
+/* ─── Reset ─────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #eef1f6;
+  color: #1a1a2e;
+}
+
+/* ─── Screen ─────────────────────────────────────────────── */
+.screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+/* ─── Card ───────────────────────────────────────────────── */
+.card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 44px 40px;
+  width: 100%;
+  max-width: 540px;
+  box-shadow: 0 4px 28px rgba(0, 0, 0, 0.09);
+}
+
+.card--centered {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* ─── Typography ─────────────────────────────────────────── */
+.app-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1d4e89;
+  margin: 0 0 6px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.screen-title {
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 6px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.screen-subtitle {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0 0 24px;
+}
+
+/* ─── Form layout ────────────────────────────────────────── */
+.form-group {
   display: flex;
   flex-direction: column;
+  margin-bottom: 18px;
+  flex: 1;
+  min-width: 0;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+/* ─── Labels & inputs ────────────────────────────────────── */
+label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="date"],
+input[type="time"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px 13px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: #1a1a2e;
+  background: #fff;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  outline: none;
+  appearance: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #1d4e89;
+  box-shadow: 0 0 0 3px rgba(29, 78, 137, 0.13);
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* ─── Fieldset ───────────────────────────────────────────── */
+fieldset {
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px 16px 2px;
+  margin: 0 0 18px;
+}
+
+legend {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #374151;
+  padding: 0 6px;
+}
+
+/* ─── Validation ─────────────────────────────────────────── */
+.error {
+  color: #dc2626;
+  font-size: 0.85rem;
+  margin: 0 0 12px;
+}
+
+.field-error {
+  color: #dc2626;
+  font-size: 0.78rem;
+  margin-top: 4px;
+}
+
+.char-count {
+  font-weight: 400;
+  color: #9ca3af;
+  font-size: 0.78rem;
+  margin-left: auto;
+}
+
+/* ─── Button ─────────────────────────────────────────────── */
+.btn-primary {
+  display: block;
+  width: 100%;
+  padding: 13px 20px;
+  background: #1d4e89;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.15s;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #163b6b;
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ─── Success state ──────────────────────────────────────── */
+.success-icon {
+  width: 64px;
+  height: 64px;
+  background: #22c55e;
+  border-radius: 50%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0 auto 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.success-message {
+  color: #374151;
+  line-height: 1.6;
+  margin-bottom: 28px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 520px) {
+  .card {
+    padding: 32px 20px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .form-row {
+    flex-direction: column;
+    gap: 0;
   }
 }
