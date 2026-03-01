@@ -1,7 +1,13 @@
 {
   "short_name": "RRT",
   "name": "RRT - Accident Report",
-  "icons": [],
+  "icons": [
+    {
+      "src": "ic_app_icon_round.webp",
+      "type": "image/webp",
+      "sizes": "any"
+    }
+  ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
