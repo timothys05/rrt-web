@@ -134,7 +134,7 @@ function ReportScreen() {
   return (
     <div className="screen">
       <div className="card">
-        <p className="app-title">Pond Lehocky</p>
+        <p className="app-title">RRT</p>
         <h1 className="screen-title">Accident Report</h1>
         <p className="screen-subtitle">{prevState.unionLabel}</p>
 

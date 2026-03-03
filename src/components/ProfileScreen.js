@@ -57,7 +57,7 @@ function ProfileScreen() {
   return (
     <div className="screen">
       <div className="card">
-        <p className="app-title">Pond Lehocky</p>
+        <p className="app-title">RRT</p>
         <h1 className="screen-title">Your Profile</h1>
         <p className="screen-subtitle">{loginState.unionLabel}</p>
         <form onSubmit={handleNext} noValidate>
