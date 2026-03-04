@@ -138,6 +138,11 @@ function ReportScreen() {
         <h1 className="screen-title">Accident Report</h1>
         <p className="screen-subtitle">{prevState.unionLabel}</p>
 
+        <p className="contact-callout">
+          Prefer to call? Contact RRT at{' '}
+          <a href="tel:+12154026119">(215) 402-6119</a>
+        </p>
+
         <form onSubmit={handleSubmit} noValidate>
           <fieldset>
             <legend>Injured Worker</legend>

@@ -194,6 +194,51 @@ legend {
   margin-bottom: 28px;
 }
 
+/* ─── Checkbox opt-in ────────────────────────────────────── */
+.checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: auto;
+  margin-top: 3px;
+  flex-shrink: 0;
+  accent-color: #1d4e89;
+}
+
+.checkbox-label {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #374151;
+  line-height: 1.5;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+/* ─── Contact callout ────────────────────────────────────── */
+.contact-callout {
+  font-size: 0.875rem;
+  color: #374151;
+  background: #f0f4ff;
+  border: 1px solid #c7d7f0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 0 0 24px;
+}
+
+.contact-callout a {
+  color: #1d4e89;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-callout a:hover {
+  text-decoration: underline;
+}
+
 /* ─── Responsive ─────────────────────────────────────────── */
 @media (max-width: 520px) {
   .card {

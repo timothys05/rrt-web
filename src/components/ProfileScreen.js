@@ -14,6 +14,7 @@ function ProfileScreen() {
     lastName: '',
     email: '',
     phone: '',
+    contactOptIn: false,
   });
   const [errors, setErrors] = useState({});
 
@@ -108,6 +109,20 @@ function ProfileScreen() {
               autoComplete="tel"
             />
             {errors.phone && <span className="field-error">{errors.phone}</span>}
+          </div>
+
+          <div className="checkbox-group">
+            <input
+              id="contactOptIn"
+              type="checkbox"
+              checked={profile.contactOptIn}
+              onChange={(e) =>
+                setProfile((prev) => ({ ...prev, contactOptIn: e.target.checked }))
+              }
+            />
+            <label htmlFor="contactOptIn" className="checkbox-label">
+              I agree to be contacted by the Rapid Response Team via text and email regarding my case.
+            </label>
           </div>
 
           <button type="submit" className="btn-primary">
