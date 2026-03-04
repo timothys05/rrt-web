@@ -14,7 +14,8 @@ function ProfileScreen() {
     lastName: '',
     email: '',
     phone: '',
-    contactOptIn: false,
+    optInEmail: false,
+    optInSMS: false,
   });
   const [errors, setErrors] = useState({});
 
@@ -113,15 +114,29 @@ function ProfileScreen() {
 
           <div className="checkbox-group">
             <input
-              id="contactOptIn"
+              id="optInEmail"
               type="checkbox"
-              checked={profile.contactOptIn}
+              checked={profile.optInEmail}
               onChange={(e) =>
-                setProfile((prev) => ({ ...prev, contactOptIn: e.target.checked }))
+                setProfile((prev) => ({ ...prev, optInEmail: e.target.checked }))
               }
             />
-            <label htmlFor="contactOptIn" className="checkbox-label">
-              I agree to be contacted by the Rapid Response Team via text and email regarding my case.
+            <label htmlFor="optInEmail" className="checkbox-label">
+              I agree to be contacted by the Rapid Response Team via email regarding my case.
+            </label>
+          </div>
+
+          <div className="checkbox-group">
+            <input
+              id="optInSMS"
+              type="checkbox"
+              checked={profile.optInSMS}
+              onChange={(e) =>
+                setProfile((prev) => ({ ...prev, optInSMS: e.target.checked }))
+              }
+            />
+            <label htmlFor="optInSMS" className="checkbox-label">
+              I agree to be contacted by the Rapid Response Team via text message regarding my case.
             </label>
           </div>
 
