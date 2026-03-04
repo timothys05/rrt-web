@@ -122,7 +122,7 @@ function ProfileScreen() {
               }
             />
             <label htmlFor="optInEmail" className="checkbox-label">
-              I agree to be contacted by the Rapid Response Team via email regarding my case.
+              Opt in to email updates from the Rapid Response Team
             </label>
           </div>
 
@@ -136,7 +136,7 @@ function ProfileScreen() {
               }
             />
             <label htmlFor="optInSMS" className="checkbox-label">
-              I agree to be contacted by the Rapid Response Team via text message regarding my case.
+              Opt in to text message updates from the Rapid Response Team
             </label>
           </div>
 
