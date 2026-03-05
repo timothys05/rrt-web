@@ -140,7 +140,7 @@ function ReportScreen() {
 
         <p className="contact-callout">
           Prefer to call? Contact RRT at{' '}
-          <a href="tel:+12154026119">(215) 402-6119</a>
+          <a href="tel:+18337784435">(833) 778-4435</a>
         </p>
 
         <form onSubmit={handleSubmit} noValidate>
