@@ -59,6 +59,7 @@ function ProfileScreen() {
   return (
     <div className="screen">
       <div className="card">
+        <img src="/ic_app_icon-playstore.png" alt="RRT Logo" className="app-logo" />
         <p className="app-title">RRT</p>
         <h1 className="screen-title">Your Profile</h1>
         <p className="screen-subtitle">{loginState.unionLabel}</p>
