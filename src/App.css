@@ -39,7 +39,7 @@ body {
   height: 88px;
   object-fit: cover;
   margin: 0 auto 18px;
-  border-radius: 50%;
+  border-radius: 22px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.14);
 }
 
