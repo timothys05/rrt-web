@@ -35,11 +35,12 @@ body {
 /* ─── Logo ───────────────────────────────────────────────── */
 .app-logo {
   display: block;
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
-  margin: 0 auto 20px;
-  border-radius: 24px;
+  width: 88px;
+  height: 88px;
+  object-fit: cover;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.14);
 }
 
 /* ─── Typography ─────────────────────────────────────────── */
