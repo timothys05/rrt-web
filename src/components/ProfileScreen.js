@@ -59,7 +59,7 @@ function ProfileScreen() {
   return (
     <div className="screen">
       <div className="card">
-        <img src="/ic_app_icon-playstore.png" alt="RRT Logo" className="app-logo--header" />
+        <img src="/IBT logo color.jpg" alt="Teamsters Local 237 Logo" className="app-logo--header" />
         <h1 className="screen-title">Your Profile</h1>
         <p className="screen-subtitle">{loginState.unionLabel}</p>
         <form onSubmit={handleNext} noValidate>
@@ -122,7 +122,7 @@ function ProfileScreen() {
               }
             />
             <label htmlFor="optInEmail" className="checkbox-label">
-              Opt in to email updates from the Rapid Response Team
+              Opt in to email updates from Teamsters Local 237
             </label>
           </div>
 
@@ -136,7 +136,7 @@ function ProfileScreen() {
               }
             />
             <label htmlFor="optInSMS" className="checkbox-label">
-              Opt in to text message updates from the Rapid Response Team
+              Opt in to text message updates from Teamsters Local 237
             </label>
           </div>
 

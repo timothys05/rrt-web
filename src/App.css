@@ -35,21 +35,17 @@ body {
 /* ─── Logo ───────────────────────────────────────────────── */
 .app-logo {
   display: block;
-  width: 88px;
+  width: 120px;
   height: 88px;
-  object-fit: cover;
+  object-fit: contain;
   margin: 0 auto 18px;
-  border-radius: 22px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.14);
 }
 
 .app-logo--header {
   display: block;
-  width: 40px;
+  width: 60px;
   height: 40px;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.14);
+  object-fit: contain;
   margin: 0 0 20px;
 }
 
@@ -59,7 +55,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #1d4e89;
+  color: #c9a84c;
   margin: 0 0 6px;
 }
 
@@ -125,8 +121,8 @@ textarea {
 input:focus,
 select:focus,
 textarea:focus {
-  border-color: #1d4e89;
-  box-shadow: 0 0 0 3px rgba(29, 78, 137, 0.13);
+  border-color: #1a3a8f;
+  box-shadow: 0 0 0 3px rgba(26, 58, 143, 0.13);
 }
 
 textarea {
@@ -173,7 +169,7 @@ legend {
   display: block;
   width: 100%;
   padding: 13px 20px;
-  background: #1d4e89;
+  background: #1a3a8f;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -186,7 +182,7 @@ legend {
 }
 
 .btn-primary:hover:not(:disabled) {
-  background: #163b6b;
+  background: #142d73;
 }
 
 .btn-primary:disabled {
@@ -253,8 +249,8 @@ legend {
 }
 
 .checkbox-group input[type="checkbox"]:checked {
-  background: #1d4e89;
-  border-color: #1d4e89;
+  background: #1a3a8f;
+  border-color: #1a3a8f;
 }
 
 .checkbox-group input[type="checkbox"]:checked::before {
@@ -267,7 +263,7 @@ legend {
 
 .checkbox-group input[type="checkbox"]:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(29, 78, 137, 0.22);
+  box-shadow: 0 0 0 3px rgba(26, 58, 143, 0.22);
 }
 
 .checkbox-label {
@@ -283,15 +279,15 @@ legend {
 .contact-callout {
   font-size: 0.875rem;
   color: #374151;
-  background: #f0f4ff;
-  border: 1px solid #c7d7f0;
+  background: #fdf8ee;
+  border: 1px solid #c9a84c;
   border-radius: 8px;
   padding: 12px 16px;
   margin: 0 0 24px;
 }
 
 .contact-callout a {
-  color: #1d4e89;
+  color: #1a3a8f;
   font-weight: 600;
   text-decoration: none;
 }
