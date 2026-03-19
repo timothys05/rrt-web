@@ -134,12 +134,12 @@ function ReportScreen() {
   return (
     <div className="screen">
       <div className="card">
-        <img src="/ic_app_icon-playstore.png" alt="RRT Logo" className="app-logo--header" />
+        <img src="/IBT logo color.jpg" alt="Teamsters Local 237 Logo" className="app-logo--header" />
         <h1 className="screen-title">Accident Report</h1>
         <p className="screen-subtitle">{prevState.unionLabel}</p>
 
         <p className="contact-callout">
-          Prefer to call? Contact RRT at{' '}
+          Prefer to call? Contact Teamsters Local 237 at{' '}
           <a href="tel:+18337784435">(833) 778-4435</a>
         </p>
 
