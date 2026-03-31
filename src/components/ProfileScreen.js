@@ -54,7 +54,7 @@ function ProfileScreen() {
   return (
     <div className="screen">
       <div className="card">
-        <img src="/IBT logo color.jpg" alt="Teamsters Local 237 Logo" className="app-logo--header" />
+        <img src="/tl237rrtlogo.png" alt="Teamsters Local 237 Logo" className="app-logo--header" />
         <h1 className="screen-title">Your Profile</h1>
         <p className="screen-subtitle">{UNION.label}</p>
         <form onSubmit={handleNext} noValidate>
