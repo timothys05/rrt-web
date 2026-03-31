@@ -6,7 +6,7 @@ function HomepageScreen() {
     <div className="hp">
 
       {/* ===================== HERO ===================== */}
-      <section className="hp-hero">
+      <section className="hp-hero" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/tl237background.png)` }}>
         <div className="hp-hero-overlay"></div>
         <nav className="hp-nav">
           <img src="/IBT logo color.jpg" alt="Teamsters Local 237" className="hp-nav-logo" />
