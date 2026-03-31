@@ -15,6 +15,7 @@ function HomepageScreen() {
             <a href="#the-rrt-process">THE RRT PROCESS</a>
             <a href="#the-guide">THE GUIDE</a>
             <a href="#contact">CONTACT</a>
+            <a href="/app" className="hp-nav-report-btn">Submit a Report</a>
           </div>
         </nav>
         <div className="hp-hero-content">
@@ -24,6 +25,7 @@ function HomepageScreen() {
             <div className="hp-hero-buttons">
               <a href="#" className="hp-btn hp-btn-dark">Download on App Store</a>
               <a href="#" className="hp-btn hp-btn-light">Download on Google Play</a>
+              <a href="/app" className="hp-btn hp-btn-report">Submit a Report</a>
             </div>
           </div>
           <div className="hp-hero-right">
