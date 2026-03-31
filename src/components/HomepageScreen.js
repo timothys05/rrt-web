@@ -9,7 +9,7 @@ function HomepageScreen() {
       <section className="hp-hero" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/tl237background.png)` }}>
         <div className="hp-hero-overlay"></div>
         <nav className="hp-nav">
-          <img src="/IBT logo color.jpg" alt="Teamsters Local 237" className="hp-nav-logo" />
+          <img src="/tl237rrtlogo.png" alt="Teamsters Local 237" className="hp-nav-logo" />
           <div className="hp-nav-links">
             <a href="#what-is-rrt">WHAT IS RRT?</a>
             <a href="#the-rrt-process">THE RRT PROCESS</a>
@@ -61,7 +61,7 @@ function HomepageScreen() {
             Teamsters Local 237
           </p>
           <div className="hp-union-seal">
-            <img src="/IBT logo color.jpg" alt="Teamsters Local 237 Seal" />
+            <img src="/tl237rrtlogo.png" alt="Teamsters Local 237 Seal" />
           </div>
         </div>
       </section>
@@ -735,7 +735,7 @@ function HomepageScreen() {
 
       {/* ===================== FOOTER ===================== */}
       <footer className="hp-footer">
-        <img src="/IBT logo color.jpg" alt="RRT" className="hp-footer-logo" />
+        <img src="/tl237rrtlogo.png" alt="RRT" className="hp-footer-logo" />
         <p className="hp-footer-copyright">
           COPYRIGHT &copy; 2023 YOUNG LAW GROUP | <a href="#">PRIVACY POLICY</a>
         </p>

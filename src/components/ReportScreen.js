@@ -134,7 +134,7 @@ function ReportScreen() {
   return (
     <div className="screen">
       <div className="card">
-        <img src="/IBT logo color.jpg" alt="Teamsters Local 237 Logo" className="app-logo--header" />
+        <img src="/tl237rrtlogo.png" alt="Teamsters Local 237 Logo" className="app-logo--header" />
         <h1 className="screen-title">Accident Report</h1>
         <p className="screen-subtitle">{prevState.unionLabel}</p>
 
