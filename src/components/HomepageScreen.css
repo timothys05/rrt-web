@@ -164,26 +164,11 @@ html {
   align-items: center;
 }
 
-.hp-phone-mockup {
-  width: 200px;
-  height: 400px;
-  background: rgba(0, 0, 0, 0.22);
-  border-radius: 36px;
-  border: 4px solid rgba(255, 255, 255, 0.55);
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
-  position: relative;
-}
-
-.hp-phone-mockup::before {
-  content: '';
-  position: absolute;
-  top: 16px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 6px;
-  background: rgba(255, 255, 255, 0.38);
-  border-radius: 3px;
+.hp-phone-image {
+  max-height: 500px;
+  width: auto;
+  object-fit: contain;
+  drop-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
 }
 
 /* ---- SECTION COMMON ---- */

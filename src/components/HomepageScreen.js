@@ -29,7 +29,7 @@ function HomepageScreen() {
             </div>
           </div>
           <div className="hp-hero-right">
-            <div className="hp-phone-mockup"></div>
+            <img src="/phoneimagehome.png" alt="RRT App" className="hp-phone-image" />
           </div>
         </div>
       </section>
