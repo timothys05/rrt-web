@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import { useNavigate, useLocation, Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import UNIONS from '../config/unions';
 
+const UNION = UNIONS[0];
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_RE = /^\+?[\d\s\-().]{7,}$/;
 
 function ProfileScreen() {
   const navigate = useNavigate();
-  const location = useLocation();
-  const loginState = location.state;
 
   const [profile, setProfile] = useState({
     firstName: '',
@@ -18,11 +18,6 @@ function ProfileScreen() {
     optInSMS: false,
   });
   const [errors, setErrors] = useState({});
-
-  // Guard: must arrive here via login
-  if (!loginState?.union) {
-    return <Navigate to="/" replace />;
-  }
 
   const validate = () => {
     const errs = {};
@@ -53,7 +48,7 @@ function ProfileScreen() {
       setErrors(errs);
       return;
     }
-    navigate('/report', { state: { ...loginState, profile } });
+    navigate('/report', { state: { union: UNION.id, unionLabel: UNION.label, profile } });
   };
 
   return (
@@ -61,7 +56,7 @@ function ProfileScreen() {
       <div className="card">
         <img src="/IBT logo color.jpg" alt="Teamsters Local 237 Logo" className="app-logo--header" />
         <h1 className="screen-title">Your Profile</h1>
-        <p className="screen-subtitle">{loginState.unionLabel}</p>
+        <p className="screen-subtitle">{UNION.label}</p>
         <form onSubmit={handleNext} noValidate>
           <div className="form-row">
             <div className="form-group">
