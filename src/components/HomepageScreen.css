@@ -50,6 +50,22 @@ html {
   opacity: 0.75;
 }
 
+.hp-nav-report-btn {
+  background: #7ab3d4;
+  color: #1a2340 !important;
+  padding: 8px 18px;
+  border-radius: 5px;
+  font-weight: 800 !important;
+  text-shadow: none !important;
+  letter-spacing: 1px !important;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.hp-nav-report-btn:hover {
+  background: #5a9abf;
+  opacity: 1 !important;
+}
+
 /* ---- HERO ---- */
 .hp-hero {
   position: relative;
@@ -133,6 +149,12 @@ html {
 .hp-btn-light {
   background: white;
   color: #1a2340;
+}
+
+.hp-btn-report {
+  background: #7ab3d4;
+  color: #1a2340;
+  border: 2px solid transparent;
 }
 
 .hp-hero-right {
