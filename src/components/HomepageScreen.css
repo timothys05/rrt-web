@@ -55,7 +55,6 @@ html {
   position: relative;
   min-height: 100vh;
   background-color: #7ab3d4;
-  background-image: url('/tl237background.png');
   background-size: cover;
   background-position: center;
   display: flex;
