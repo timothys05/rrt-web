@@ -1,8 +1,27 @@
+import { useRef, useEffect } from 'react';
 import './HomepageScreen.css';
 import HpNav from './HpNav';
 import HpFooter from './HpFooter';
 
 function HomepageScreen() {
+  const rrtRef = useRef(null);
+
+  useEffect(() => {
+    const el = rrtRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.classList.add('hp-fade-in-visible');
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="hp">
 
@@ -45,32 +64,34 @@ function HomepageScreen() {
 
       {/* ===================== WHAT IS RRT ===================== */}
       <section id="what-is-rrt" className="hp-section">
-        <div className="hp-section-header">
-          <h2>WHAT IS THE RAPID RESPONSE TEAM?</h2>
-        </div>
         <div className="hp-section-body hp-section-body--narrow">
-          <p>
-            The Rapid Response Team (RRT) is a service designed by Teamsters Local 237. It is a free legal and
-            investigative service offered to our members. This program is dedicated to protecting the rights of
-            union members and their families after suffering from serious work-related injuries or mesothelioma.
-          </p>
-          <p>
-            Teamsters Local 237 understands that being grievously injured in an accident, or being diagnosed with
-            mesothelioma, is a financial life changer for union workers and their families. Besides the basic costs
-            of emergency medical care, surgery, and rehabilitation, there is also the possibility of suffering from
-            a loss of income and benefits.
-          </p>
-          <blockquote className="hp-quote">
-            "The Rapid Response Team (RRT) will provide additional resources for our members and their families in
-            the event of unfortunate work-related injuries."
-          </blockquote>
-          <p className="hp-attribution">
-            Gregory Floyd<br />
-            President<br />
-            Teamsters Local 237
-          </p>
-          <div className="hp-union-seal">
-            <img src="/tl237rrtlogo.png" alt="Teamsters Local 237 Seal" />
+          <div className="hp-rrt-title-wrapper">
+            <h2 className="hp-rrt-title">WHAT IS THE RAPID RESPONSE TEAM?</h2>
+          </div>
+          <div className="hp-fade-in hp-rrt-content" ref={rrtRef}>
+            <p>
+              The Rapid Response Team (RRT) is a service designed by Teamsters Local 237. It is a free legal and
+              investigative service offered to our members. This program is dedicated to protecting the rights of
+              union members and their families after suffering from serious work-related injuries or mesothelioma.
+            </p>
+            <p>
+              Teamsters Local 237 understands that being grievously injured in an accident, or being diagnosed with
+              mesothelioma, is a financial life changer for union workers and their families. Besides the basic costs
+              of emergency medical care, surgery, and rehabilitation, there is also the possibility of suffering from
+              a loss of income and benefits.
+            </p>
+            <blockquote className="hp-quote">
+              "The Rapid Response Team (RRT) will provide additional resources for our members and their families in
+              the event of unfortunate work-related injuries."
+            </blockquote>
+            <p className="hp-attribution">
+              Gregory Floyd<br />
+              President<br />
+              Teamsters Local 237
+            </p>
+            <div className="hp-union-seal">
+              <img src="/tl237rrtlogo.png" alt="Teamsters Local 237 Seal" />
+            </div>
           </div>
         </div>
       </section>
