@@ -1,5 +1,5 @@
 /* ============================================================
-   HOMEPAGE SCREEN
+   SHARED HP STYLES (used by Homepage, Guide, Contact)
    ============================================================ */
 
 html {
@@ -25,8 +25,14 @@ html {
   z-index: 100;
 }
 
+/* Nav on sub-pages (not overlaid on hero) */
+.hp-nav.hp-nav--page {
+  position: relative;
+  background: #1a2340;
+}
+
 .hp-nav-logo {
-  height: 64px;
+  height: 90px;
   object-fit: contain;
 }
 
@@ -44,6 +50,10 @@ html {
   letter-spacing: 1.5px;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.55);
   transition: opacity 0.2s;
+}
+
+.hp-nav.hp-nav--page .hp-nav-links a {
+  text-shadow: none;
 }
 
 .hp-nav-links a:hover {
@@ -92,7 +102,7 @@ html {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 130px 50px 80px;
+  padding: 140px 50px 80px;
   gap: 60px;
 }
 
@@ -114,18 +124,26 @@ html {
 .hp-hero-left p {
   font-size: 18px;
   color: rgba(255, 255, 255, 0.92);
-  margin: 0 0 36px;
+  margin: 0 0 32px;
   line-height: 1.7;
 }
 
+/* Hero buttons: store row + report row */
 .hp-hero-buttons {
   display: flex;
-  gap: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.hp-hero-btns-row {
+  display: flex;
+  gap: 14px;
   flex-wrap: wrap;
 }
 
 .hp-btn {
-  padding: 14px 28px;
+  padding: 13px 26px;
   border-radius: 6px;
   font-size: 15px;
   font-weight: 700;
@@ -133,6 +151,7 @@ html {
   letter-spacing: 0.5px;
   display: inline-block;
   transition: transform 0.2s, opacity 0.2s;
+  white-space: nowrap;
 }
 
 .hp-btn:hover {
@@ -140,20 +159,17 @@ html {
   opacity: 0.88;
 }
 
-.hp-btn-dark {
-  background: #1a2340;
-  color: white;
-  border: 2px solid rgba(255, 255, 255, 0.7);
-}
-
-.hp-btn-light {
+/* App Store / Google Play: white bg, dark text, dark border */
+.hp-btn-store {
   background: white;
   color: #1a2340;
+  border: 2px solid #1a2340;
 }
 
+/* Submit a Report: light blue bg, white text */
 .hp-btn-report {
   background: #7ab3d4;
-  color: #1a2340;
+  color: white;
   border: 2px solid transparent;
 }
 
@@ -168,7 +184,7 @@ html {
   max-height: 500px;
   width: auto;
   object-fit: contain;
-  drop-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
 }
 
 /* ---- SECTION COMMON ---- */
@@ -176,15 +192,16 @@ html {
   background: white;
 }
 
+/* Thin strip header — just enough padding for the title */
 .hp-section-header {
   background: #7ab3d4;
-  padding: 48px 50px 40px;
+  padding: 14px 50px;
   text-align: center;
 }
 
 .hp-section-header h2 {
   color: #1a2340;
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 900;
   letter-spacing: 2.5px;
   text-transform: uppercase;
@@ -193,12 +210,18 @@ html {
   padding-left: 18px;
   text-align: left;
   margin: 0;
+  line-height: 1.4;
 }
 
 .hp-section-body {
   max-width: 1100px;
   margin: 0 auto;
   padding: 60px 50px;
+}
+
+/* Narrow body for What is RRT */
+.hp-section-body--narrow {
+  max-width: 800px;
 }
 
 .hp-section-body > p {
@@ -215,14 +238,18 @@ html {
   color: #1a2340;
   font-size: 17px;
   line-height: 1.75;
-  padding: 24px 0 16px;
-  margin: 10px 0 0;
+  text-align: center;
+  max-width: 640px;
+  margin: 20px auto 16px;
+  padding: 20px 30px;
 }
 
 .hp-attribution {
-  color: #555;
+  font-weight: 700;
+  color: #1a2340;
   font-size: 15px;
   line-height: 1.8;
+  text-align: center;
   margin: 0 0 30px;
 }
 
@@ -238,21 +265,33 @@ html {
 }
 
 /* ---- RRT PROCESS ---- */
+/* Single column, icon left + text right */
 .hp-process-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
   margin-top: 40px;
 }
 
-.hp-process-item {}
+.hp-process-item {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
 
 .hp-process-icon {
-  width: 68px;
-  height: 68px;
-  background: #7ab3d4;
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  background: #1a2340;
   border-radius: 50%;
-  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hp-process-text {
+  flex: 1;
 }
 
 .hp-process-item h3 {
@@ -300,7 +339,7 @@ html {
   margin: 0 0 18px;
 }
 
-/* Steps list (numbered, blue arrow circle icons) */
+/* Steps list */
 .hp-steps {
   list-style: none;
   padding: 0;
@@ -347,8 +386,6 @@ html {
   margin-top: 20px;
 }
 
-.hp-investigation-group {}
-
 .hp-investigation-icon {
   width: 56px;
   height: 56px;
@@ -388,11 +425,14 @@ html {
 
 .hp-fa-icon {
   flex-shrink: 0;
-  width: 38px;
-  height: 38px;
+  width: 42px;
+  height: 42px;
   background: #7ab3d4;
   border-radius: 4px;
   margin-top: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hp-first-aid-content {
@@ -585,9 +625,11 @@ html {
   resize: vertical;
 }
 
-.hp-contact-form button {
+/* Contact submit: dark navy, left-aligned, max-width 200px */
+.hp-contact-submit {
   grid-column: 1 / -1;
-  padding: 14px;
+  justify-self: start;
+  padding: 13px 28px;
   background: #1a2340;
   color: white;
   border: none;
@@ -596,10 +638,11 @@ html {
   font-weight: 700;
   cursor: pointer;
   letter-spacing: 1px;
+  max-width: 200px;
   transition: background 0.2s;
 }
 
-.hp-contact-form button:hover {
+.hp-contact-submit:hover {
   background: #253260;
 }
 
@@ -657,20 +700,16 @@ html {
 @media (max-width: 960px) {
   .hp-hero-content {
     flex-direction: column;
-    padding-top: 110px;
+    padding-top: 130px;
     text-align: center;
   }
 
   .hp-hero-buttons {
-    justify-content: center;
+    align-items: center;
   }
 
   .hp-hero-right {
     display: none;
-  }
-
-  .hp-process-grid {
-    grid-template-columns: 1fr;
   }
 
   .hp-contact-cols {
@@ -687,11 +726,11 @@ html {
     padding: 16px 20px;
     flex-direction: column;
     gap: 12px;
-    background: rgba(26, 35, 64, 0.72);
+    background: rgba(26, 35, 64, 0.82);
   }
 
   .hp-nav-links {
-    gap: 14px;
+    gap: 12px;
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -700,8 +739,12 @@ html {
     font-size: 11px;
   }
 
+  .hp-nav-logo {
+    height: 70px;
+  }
+
   .hp-section-header {
-    padding: 32px 20px;
+    padding: 12px 20px;
   }
 
   .hp-section-body {
@@ -709,7 +752,7 @@ html {
   }
 
   .hp-hero-content {
-    padding: 130px 20px 60px;
+    padding: 140px 20px 60px;
   }
 
   .hp-hero-left h1 {
@@ -720,8 +763,24 @@ html {
     grid-template-columns: 1fr;
   }
 
-  .hp-contact-form .hp-full-width,
-  .hp-contact-form button {
+  .hp-contact-form .hp-full-width {
     grid-column: 1;
+  }
+
+  .hp-contact-submit {
+    grid-column: 1;
+  }
+
+  .hp-process-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hp-process-item h3 {
+    border-left: none;
+    padding-left: 0;
+    border-bottom: 4px solid #7ab3d4;
+    padding-bottom: 8px;
   }
 }
