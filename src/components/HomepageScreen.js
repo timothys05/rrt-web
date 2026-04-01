@@ -35,7 +35,6 @@ function HomepageScreen() {
                   </div>
                 </a>
               </div>
-              <a href="/profile" className="hp-btn-report">Submit a Report</a>
             </div>
           </div>
           <div className="hp-hero-right">
