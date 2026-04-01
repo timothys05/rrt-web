@@ -261,6 +261,36 @@ html {
 }
 
 /* ---- WHAT IS RRT ---- */
+
+/* Title: plain text, centered container, border only on the text itself */
+.hp-rrt-title-wrapper {
+  text-align: center;
+  padding: 52px 0 36px;
+}
+
+.hp-rrt-title {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #1a2340;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-left: 4px solid #7ab3d4;
+  padding-left: 16px;
+  text-align: left;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* Content area: left-aligned body text */
+.hp-rrt-content p {
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.9;
+  color: #555;
+  margin: 0 0 24px;
+}
+
 .hp-quote {
   font-style: italic;
   font-weight: 700;
@@ -268,18 +298,17 @@ html {
   font-size: 17px;
   line-height: 1.75;
   text-align: center;
-  max-width: 640px;
-  margin: 20px auto 16px;
-  padding: 20px 30px;
+  margin: 10px 15% 16px;
+  padding: 0;
 }
 
 .hp-attribution {
   font-weight: 700;
   color: #1a2340;
   font-size: 15px;
-  line-height: 1.8;
+  line-height: 1.9;
   text-align: center;
-  margin: 0 0 30px;
+  margin: 36px 0 0;
 }
 
 .hp-union-seal {
@@ -289,8 +318,20 @@ html {
 }
 
 .hp-union-seal img {
-  height: 120px;
+  height: 150px;
   object-fit: contain;
+}
+
+/* Fade-in on scroll */
+.hp-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.hp-fade-in.hp-fade-in-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ---- RRT PROCESS ---- */
