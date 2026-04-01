@@ -32,7 +32,7 @@ html {
 }
 
 .hp-nav-logo {
-  height: 90px;
+  height: 70px;
   object-fit: contain;
 }
 
@@ -142,35 +142,64 @@ html {
   flex-wrap: wrap;
 }
 
-.hp-btn {
-  padding: 13px 26px;
-  border-radius: 6px;
-  font-size: 15px;
-  font-weight: 700;
+/* App Store / Google Play buttons */
+.hp-btn-store {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 190px;
+  box-sizing: border-box;
+  padding: 12px 24px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid white;
+  border-radius: 8px;
+  color: white;
   text-decoration: none;
-  letter-spacing: 0.5px;
-  display: inline-block;
-  transition: transform 0.2s, opacity 0.2s;
-  white-space: nowrap;
+  transition: background 0.2s;
 }
 
-.hp-btn:hover {
-  transform: translateY(-2px);
+.hp-btn-store:hover {
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 1;
+}
+
+.hp-btn-store-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.hp-btn-store-small {
+  font-size: 11px;
+  font-weight: 400;
   opacity: 0.88;
 }
 
-/* App Store / Google Play: white bg, dark text, dark border */
-.hp-btn-store {
-  background: white;
-  color: #1a2340;
-  border: 2px solid #1a2340;
+.hp-btn-store-large {
+  font-size: 16px;
+  font-weight: 700;
 }
 
-/* Submit a Report: light blue bg, white text */
+/* Submit a Report button */
 .hp-btn-report {
-  background: #7ab3d4;
+  display: inline-block;
+  width: 190px;
+  box-sizing: border-box;
+  padding: 12px 24px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid white;
+  border-radius: 8px;
   color: white;
-  border: 2px solid transparent;
+  text-decoration: none;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.hp-btn-report:hover {
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 1;
 }
 
 .hp-hero-right {
