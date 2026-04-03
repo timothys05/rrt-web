@@ -5,27 +5,26 @@
 
 body {
   margin: 0;
-  background: #eef1f6;
+  background: #ffffff;
   color: #1a1a2e;
+  font-family: 'Inter', 'Arial', sans-serif;
 }
 
 /* ─── Screen ─────────────────────────────────────────────── */
 .screen {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 32px 16px;
+  background: #ffffff;
+  padding: 80px 24px 60px;
 }
 
 /* ─── Card ───────────────────────────────────────────────── */
 .card {
-  background: #fff;
-  border-radius: 14px;
-  padding: 44px 40px;
+  background: #ffffff;
   width: 100%;
-  max-width: 540px;
-  box-shadow: 0 4px 28px rgba(0, 0, 0, 0.09);
+  max-width: 600px;
 }
 
 .card--centered {
@@ -60,16 +59,33 @@ body {
 }
 
 .screen-title {
-  font-size: 1.65rem;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2rem;
   font-weight: 700;
-  color: #1a1a2e;
+  color: #1a2340;
   margin: 0 0 6px;
 }
 
 .screen-subtitle {
+  font-family: 'Inter', 'Arial', sans-serif;
   font-size: 0.875rem;
   color: #6b7280;
-  margin: 0 0 24px;
+  margin: 0 0 28px;
+}
+
+/* ─── Back link ──────────────────────────────────────────── */
+.back-link {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-family: 'Inter', 'Arial', sans-serif;
+  color: #7ab3d4;
+  text-decoration: none;
+  margin-bottom: 28px;
+  transition: opacity 0.2s;
+}
+
+.back-link:hover {
+  opacity: 0.75;
 }
 
 /* ─── Form layout ────────────────────────────────────────── */
@@ -90,7 +106,7 @@ body {
 label {
   font-size: 0.82rem;
   font-weight: 600;
-  color: #374151;
+  color: #1a2340;
   margin-bottom: 6px;
   display: flex;
   align-items: baseline;
@@ -107,8 +123,8 @@ select,
 textarea {
   width: 100%;
   padding: 10px 13px;
-  border: 1.5px solid #d1d5db;
-  border-radius: 8px;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
   font-size: 0.95rem;
   font-family: inherit;
   color: #1a1a2e;
@@ -121,8 +137,8 @@ textarea {
 input:focus,
 select:focus,
 textarea:focus {
-  border-color: #1a3a8f;
-  box-shadow: 0 0 0 3px rgba(26, 58, 143, 0.13);
+  border-color: #7ab3d4;
+  box-shadow: 0 0 0 3px rgba(122, 179, 212, 0.25);
 }
 
 textarea {
@@ -169,20 +185,20 @@ legend {
   display: block;
   width: 100%;
   padding: 13px 20px;
-  background: #1a3a8f;
+  background: #7ab3d4;
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   font-size: 1rem;
   font-weight: 600;
   font-family: inherit;
   cursor: pointer;
   margin-top: 10px;
-  transition: background 0.15s;
+  transition: background 0.2s;
 }
 
 .btn-primary:hover:not(:disabled) {
-  background: #142d73;
+  background: #5a9abf;
 }
 
 .btn-primary:disabled {
@@ -249,8 +265,8 @@ legend {
 }
 
 .checkbox-group input[type="checkbox"]:checked {
-  background: #1a3a8f;
-  border-color: #1a3a8f;
+  background: #1a2340;
+  border-color: #1a2340;
 }
 
 .checkbox-group input[type="checkbox"]:checked::before {
@@ -263,7 +279,7 @@ legend {
 
 .checkbox-group input[type="checkbox"]:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(26, 58, 143, 0.22);
+  box-shadow: 0 0 0 3px rgba(122, 179, 212, 0.35);
 }
 
 .checkbox-label {
@@ -279,15 +295,15 @@ legend {
 .contact-callout {
   font-size: 0.875rem;
   color: #374151;
-  background: #fdf8ee;
-  border: 1px solid #c9a84c;
+  background: #eef6fb;
+  border: 1px solid #7ab3d4;
   border-radius: 8px;
   padding: 12px 16px;
   margin: 0 0 24px;
 }
 
 .contact-callout a {
-  color: #1a3a8f;
+  color: #1a2340;
   font-weight: 600;
   text-decoration: none;
 }
@@ -298,8 +314,8 @@ legend {
 
 /* ─── Responsive ─────────────────────────────────────────── */
 @media (max-width: 520px) {
-  .card {
-    padding: 32px 20px;
+  .screen {
+    padding: 60px 20px 40px;
   }
 
   .form-row {

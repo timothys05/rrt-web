@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import UNIONS from '../config/unions';
 
 const UNION = UNIONS[0];
@@ -54,6 +54,7 @@ function ProfileScreen() {
   return (
     <div className="screen">
       <div className="card">
+        <Link to="/" className="back-link">← Back to Home</Link>
         <img src="/tl237rrtlogo.png" alt="Teamsters Local 237 Logo" className="app-logo--header" />
         <h1 className="screen-title">Your Profile</h1>
         <p className="screen-subtitle">{UNION.label}</p>

@@ -1,29 +1,58 @@
+import { useRef, useEffect } from 'react';
 import './HomepageScreen.css';
 import HpNav from './HpNav';
 import HpFooter from './HpFooter';
 
 function GuideScreen() {
+  const sectionRefs = useRef([]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    const observers = sectionRefs.current.map(el => {
+      if (!el) return null;
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            el.classList.add('hp-anim-visible');
+            observer.unobserve(el);
+          }
+        },
+        { threshold: 0.1 }
+      );
+      observer.observe(el);
+      return observer;
+    });
+    return () => observers.forEach(o => o && o.disconnect());
+  }, []);
+
+  const ref = (i) => (el) => { sectionRefs.current[i] = el; };
+
   return (
     <div className="hp">
       <HpNav page />
 
-      <div className="hp-section-header">
-        <h2>THE GUIDE</h2>
+      <div className="hp-guide-hero">
+        <h1>THE GUIDE</h1>
       </div>
 
       <div className="hp-section" style={{ background: 'white' }}>
         <div className="hp-section-body">
 
           {/* SUBTITLE */}
-          <div className="hp-guide-subsection">
-            <h3>RAPID RESPONSE TEAM GUIDE</h3>
+          <div className="hp-guide-subsection hp-slide-up-container" ref={ref(0)}>
+            <div className="hp-rrt-title-wrapper hp-slide-item">
+              <h2 className="hp-rrt-title">RAPID RESPONSE TEAM GUIDE</h2>
+            </div>
           </div>
 
           {/* IF YOU'RE INJURED */}
-          <div className="hp-guide-subsection">
-            <h3>IF YOU'RE INJURED</h3>
-            <p>Steps to take if you're injured at work:</p>
-            <ol className="hp-steps">
+          <div className="hp-guide-subsection hp-slide-up-container" ref={ref(1)}>
+            <h3 className="hp-slide-item">IF YOU'RE INJURED</h3>
+            <p className="hp-slide-item">Steps to take if you're injured at work:</p>
+            <ol className="hp-steps hp-slide-item">
               <li>
                 <span className="hp-step-icon">→</span>
                 <div><strong>SEEK PROPER MEDICAL ATTENTION</strong> — Call 911 if needed.</div>
@@ -62,13 +91,13 @@ function GuideScreen() {
           </div>
 
           {/* POSSIBLE ACCIDENT INVESTIGATION QUESTIONS */}
-          <div className="hp-guide-subsection">
-            <h3>POSSIBLE ACCIDENT INVESTIGATION QUESTIONS</h3>
-            <p>
+          <div className="hp-guide-subsection hp-slide-up-container" ref={ref(2)}>
+            <h3 className="hp-slide-item">POSSIBLE ACCIDENT INVESTIGATION QUESTIONS</h3>
+            <p className="hp-slide-item">
               Some of the questions below will be applicable and some will not. Which questions are applicable
               depends on the nature and circumstances of the accident.
             </p>
-            <div className="hp-investigation-grid">
+            <div className="hp-investigation-grid hp-slide-item">
               <div className="hp-investigation-group">
                 <div className="hp-investigation-icon">HOW</div>
                 <ul>
@@ -109,9 +138,9 @@ function GuideScreen() {
           </div>
 
           {/* ENSURING TIMELY ACTION */}
-          <div className="hp-guide-subsection">
-            <h3>ENSURING TIMELY ACTION</h3>
-            <p>
+          <div className="hp-guide-subsection hp-slide-up-container" ref={ref(3)}>
+            <h3 className="hp-slide-item">ENSURING TIMELY ACTION</h3>
+            <p className="hp-slide-item">
               Ensuring timely action following a workplace accident or other personal injury case is of utmost
               importance for several crucial reasons. Meeting the statute(s) of limitations is vital. Every claim
               has a statute of limitations, which is the legal time frame within which a person must file. If the
@@ -119,7 +148,7 @@ function GuideScreen() {
               damages. Failing to initiate legal action in a timely manner can severely limit, or even eliminate,
               your ability to pursue a claim, even if you have a strong case otherwise.
             </p>
-            <p>
+            <p className="hp-slide-item">
               Further, delays in pursuing a personal injury claim may lead to disputes regarding causation,
               liability, and damages. Insurance companies may question the severity of your injuries or argue that
               your injuries were not caused by the accident in question. By taking timely action, you can
@@ -128,22 +157,22 @@ function GuideScreen() {
           </div>
 
           {/* DOCUMENTING INJURIES */}
-          <div className="hp-guide-subsection">
-            <h3>DOCUMENTING INJURIES AND MEDICAL TREATMENT</h3>
-            <p>
+          <div className="hp-guide-subsection hp-slide-up-container" ref={ref(4)}>
+            <h3 className="hp-slide-item">DOCUMENTING INJURIES AND MEDICAL TREATMENT</h3>
+            <p className="hp-slide-item">
               Documenting injuries and medical treatment in a personal injury case is crucial for several reasons.
               First, it provides a detailed record of the injuries sustained. Immediate medical attention after an
               accident is essential for your health and for building a strong case. Medical records, diagnostic
               tests, and treatment plans serve as concrete evidence of the injuries. Providing these materials to
               your attorneys ensures no crucial detail is overlooked.
             </p>
-            <p>
+            <p className="hp-slide-item">
               Second, documenting injuries and medical treatment establishes that the injuries resulted from the
               accident. Insurance companies and opposing parties may argue that injuries were pre-existing or less
               severe. By documenting injuries and care received after the accident, victims can clearly show the
               injuries were a direct result of the incident.
             </p>
-            <p>
+            <p className="hp-slide-item">
               Third, proper documentation helps calculate the full extent of damages. In workplace injury and other
               personal injury cases, victims are entitled to compensation for medical expenses, both current and
               future. Detailed medical records help accurately assess these costs, ensuring victims receive the
@@ -152,21 +181,21 @@ function GuideScreen() {
           </div>
 
           {/* PRESERVING ACCIDENT SCENE EVIDENCE */}
-          <div className="hp-guide-subsection">
-            <h3>PRESERVING ACCIDENT SCENE EVIDENCE</h3>
-            <p>
+          <div className="hp-guide-subsection hp-slide-up-container" ref={ref(5)}>
+            <h3 className="hp-slide-item">PRESERVING ACCIDENT SCENE EVIDENCE</h3>
+            <p className="hp-slide-item">
               Preserving evidence of the accident scene is crucial in workplace and personal injury cases, as it
               helps determine liability and establish facts. Accurate evidence such as broken equipment, work area
               layouts, conditions, or property damage provides vital clues for investigators reconstructing events.
               This determination of liability is essential for holding the responsible party accountable.
             </p>
-            <p>
+            <p className="hp-slide-item">
               Additionally, preserved evidence allows investigators to observe the scene as it was during the
               accident. Because accident scenes can change, evidence can quickly disappear or be altered. By
               preserving evidence through photographs, video recordings, and detailed notes, details about the
               accident scene are maintained, allowing for a more accurate and thorough investigation.
             </p>
-            <p>
+            <p className="hp-slide-item">
               Preserved accident scene evidence also serves as critical documentation in claims. Insurance
               companies, courts, and legal teams rely on this evidence to validate injuries and damages.
               Well-preserved evidence supports the victim's version of events, making their case stronger during
@@ -175,9 +204,9 @@ function GuideScreen() {
           </div>
 
           {/* HOW TO PHOTOGRAPH */}
-          <div className="hp-guide-subsection">
-            <h3>HOW TO PHOTOGRAPH THE ACCIDENT SCENE</h3>
-            <ol className="hp-steps">
+          <div className="hp-guide-subsection hp-slide-up-container" ref={ref(6)}>
+            <h3 className="hp-slide-item">HOW TO PHOTOGRAPH THE ACCIDENT SCENE</h3>
+            <ol className="hp-steps hp-slide-item">
               <li><span className="hp-step-icon">→</span><div><strong>ENSURE SAFETY FIRST</strong> — Address any immediate dangers and medical needs.</div></li>
               <li><span className="hp-step-icon">→</span><div><strong>ACT QUICKLY</strong> — Photograph the scene promptly before any changes.</div></li>
               <li><span className="hp-step-icon">→</span><div><strong>CAPTURE VARIOUS ANGLES</strong> — Take wide shots for context and close-ups for details.</div></li>
@@ -190,14 +219,14 @@ function GuideScreen() {
           </div>
 
           {/* GENERAL FIRST AID */}
-          <div className="hp-guide-subsection">
-            <h3>GENERAL FIRST AID PROCEDURES</h3>
-            <p>
+          <div className="hp-guide-subsection hp-slide-up-container" ref={ref(7)}>
+            <h3 className="hp-slide-item">GENERAL FIRST AID PROCEDURES</h3>
+            <p className="hp-slide-item">
               This manual serves as a guide for responding to various first aid emergencies within the workplace.
               Its purpose is to provide employees with the knowledge and steps necessary to assist coworkers in
               need, reduce the severity of injuries or illnesses, and potentially save lives in critical situations.
             </p>
-            <ol className="hp-steps">
+            <ol className="hp-steps hp-slide-item">
               <li><span className="hp-step-icon">→</span><div><strong>ASSESS THE SITUATION</strong> — Quickly evaluate the scene for safety. Ensure the area is safe for you, the victim, and others before providing assistance.</div></li>
               <li><span className="hp-step-icon">→</span><div><strong>CALL FOR HELP</strong> — If the situation appears serious, call emergency services immediately. Provide them with precise information about the location and nature of the emergency.</div></li>
               <li><span className="hp-step-icon">→</span><div><strong>CONSENT</strong> — Before administering first aid, gain consent from the conscious victim. If the victim is unconscious, consent is implied.</div></li>
@@ -207,12 +236,12 @@ function GuideScreen() {
           </div>
 
           {/* SPECIFIC FIRST AID EMERGENCIES */}
-          <div className="hp-guide-subsection">
-            <h3>SPECIFIC FIRST AID EMERGENCIES</h3>
-            <p>Before initiating any first aid to control bleeding, put on gloves to avoid contact between victim's blood and your skin.</p>
+          <div className="hp-guide-subsection hp-slide-up-container" ref={ref(8)}>
+            <h3 className="hp-slide-item">SPECIFIC FIRST AID EMERGENCIES</h3>
+            <p className="hp-slide-item">Before initiating any first aid to control bleeding, put on gloves to avoid contact between victim's blood and your skin.</p>
 
-            {/* BLEEDING — cross/plus icon */}
-            <div className="hp-first-aid-item">
+            {/* BLEEDING */}
+            <div className="hp-first-aid-item hp-slide-item">
               <div className="hp-fa-icon">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round">
                   <line x1="12" y1="5" x2="12" y2="19"/>
@@ -230,8 +259,8 @@ function GuideScreen() {
               </div>
             </div>
 
-            {/* STROKE — brain icon */}
-            <div className="hp-first-aid-item">
+            {/* STROKE */}
+            <div className="hp-first-aid-item hp-slide-item">
               <div className="hp-fa-icon">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/>
@@ -251,8 +280,8 @@ function GuideScreen() {
               </div>
             </div>
 
-            {/* CHOKING — person with hands at throat icon */}
-            <div className="hp-first-aid-item">
+            {/* CHOKING */}
+            <div className="hp-first-aid-item hp-slide-item">
               <div className="hp-fa-icon">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="12" cy="4" r="2"/>
@@ -281,8 +310,8 @@ function GuideScreen() {
               </div>
             </div>
 
-            {/* CPR — lungs icon */}
-            <div className="hp-first-aid-item">
+            {/* CPR */}
+            <div className="hp-first-aid-item hp-slide-item">
               <div className="hp-fa-icon">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M12 4v7"/>
@@ -305,8 +334,8 @@ function GuideScreen() {
               </div>
             </div>
 
-            {/* SPINAL INJURIES — spine icon */}
-            <div className="hp-first-aid-item">
+            {/* SPINAL INJURIES */}
+            <div className="hp-first-aid-item hp-slide-item">
               <div className="hp-fa-icon">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="8" y="1" width="8" height="4" rx="1"/>
@@ -338,8 +367,8 @@ function GuideScreen() {
               </div>
             </div>
 
-            {/* HEART ATTACK — heart icon */}
-            <div className="hp-first-aid-item">
+            {/* HEART ATTACK */}
+            <div className="hp-first-aid-item hp-slide-item">
               <div className="hp-fa-icon">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
