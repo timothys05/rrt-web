@@ -131,15 +131,16 @@ function HomepageScreen() {
 
               <div className="hp-carousel-column">
                 <div className="hp-carousel">
-                  {carouselImages.map((src, i) => (
-                    <div
-                      key={src}
-                      className="hp-carousel-slide"
-                      style={{ transform: `translateX(${(i - carouselIndex) * 100}%)` }}
-                    >
-                      <img src={src} alt={`RRT App screen ${i + 1}`} />
-                    </div>
-                  ))}
+                  <div
+                    className="hp-carousel-track"
+                    style={{ transform: `translateX(-${carouselIndex * 25}%)` }}
+                  >
+                    {carouselImages.map((src, i) => (
+                      <div key={src} className="hp-carousel-slide">
+                        <img src={src} alt={`RRT App screen ${i + 1}`} />
+                      </div>
+                    ))}
+                  </div>
                 </div>
                 <div className="hp-carousel-dots">
                   {carouselImages.map((_, i) => (
