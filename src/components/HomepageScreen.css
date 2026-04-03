@@ -503,7 +503,8 @@ html {
   padding: 0;
 }
 
-.hp-attribution {
+.hp-attribution,
+.hp-rrt-content p.hp-attribution {
   font-weight: 700;
   color: #1a2340;
   font-size: 15px;
