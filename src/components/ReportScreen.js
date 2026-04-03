@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate, useLocation, Navigate } from 'react-router-dom';
+import { useNavigate, useLocation, Navigate, Link } from 'react-router-dom';
 import JSZip from 'jszip';
 
 // Strip trailing slash from URL; strip leading '?' from SAS token if present
@@ -114,6 +114,7 @@ function ReportScreen() {
     return (
       <div className="screen">
         <div className="card card--centered">
+          <button className="back-link" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'block', textAlign: 'left' }} onClick={() => navigate(-1)}>← Back to Report</button>
           <div className="success-icon">✓</div>
           <h1 className="screen-title">Report Submitted</h1>
           <p className="success-message">
@@ -134,6 +135,7 @@ function ReportScreen() {
   return (
     <div className="screen">
       <div className="card">
+        <Link to="/app" className="back-link">← Back to Profile</Link>
         <img src="/tl237rrtlogo.png" alt="Teamsters Local 237 Logo" className="app-logo--header" />
         <h1 className="screen-title">Accident Report</h1>
         <p className="screen-subtitle">{prevState.unionLabel}</p>
