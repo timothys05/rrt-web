@@ -351,9 +351,6 @@ html {
   overflow: hidden;
   border-radius: 18px;
   flex-shrink: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .hp-carousel-slide {
