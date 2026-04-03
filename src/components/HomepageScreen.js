@@ -89,7 +89,7 @@ function HomepageScreen() {
           playsInline
           poster={`${process.env.PUBLIC_URL}/tl237background.png`}
         >
-          <source src={`${process.env.PUBLIC_URL}/cityworkervideo.mp4`} type="video/mp4" />
+          <source src={`${process.env.PUBLIC_URL}/Cityworkervideo.mp4`} type="video/mp4" />
         </video>
         <div className="hp-hero-overlay"></div>
         <div className="hp-hero-blue-tint"></div>
