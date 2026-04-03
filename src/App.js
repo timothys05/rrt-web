@@ -13,6 +13,7 @@ function App() {
         <Route path="/" element={<HomepageScreen />} />
         <Route path="/guide" element={<GuideScreen />} />
         <Route path="/contact" element={<ContactScreen />} />
+        <Route path="/app" element={<ProfileScreen />} />
         <Route path="/profile" element={<ProfileScreen />} />
         <Route path="/report" element={<ReportScreen />} />
         <Route path="*" element={<Navigate to="/" replace />} />

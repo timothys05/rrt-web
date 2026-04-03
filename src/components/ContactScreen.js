@@ -1,14 +1,19 @@
+import { useEffect } from 'react';
 import './HomepageScreen.css';
 import HpNav from './HpNav';
 import HpFooter from './HpFooter';
 
 function ContactScreen() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="hp">
       <HpNav page />
 
-      <div className="hp-section-header">
-        <h2>CONTACT</h2>
+      <div className="hp-guide-hero">
+        <h1>CONTACT</h1>
       </div>
 
       <div className="hp-section">
