@@ -1,33 +1,98 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import './HomepageScreen.css';
 import HpNav from './HpNav';
 import HpFooter from './HpFooter';
 
 function HomepageScreen() {
   const rrtRef = useRef(null);
+  const processRef = useRef(null);
+
+  const carouselImages = [
+    '/tl237apphome.png',
+    '/tl237apprecord.png',
+    '/tl237appphotos.png',
+    '/tl237appreport.png',
+  ];
+  const [carouselIndex, setCarouselIndex] = useState(0);
+  const autoRef = useRef(null);
+  const pauseRef = useRef(null);
+
+  const startAuto = () => {
+    clearInterval(autoRef.current);
+    autoRef.current = setInterval(() => {
+      setCarouselIndex(i => (i + 1) % 4);
+    }, 3000);
+  };
+
+  const pauseAuto = () => {
+    clearInterval(autoRef.current);
+    clearTimeout(pauseRef.current);
+    pauseRef.current = setTimeout(startAuto, 5000);
+  };
+
+  const goNext = (manual = false) => {
+    if (manual) pauseAuto();
+    setCarouselIndex(i => (i + 1) % 4);
+  };
+
+  const goPrev = (manual = false) => {
+    if (manual) pauseAuto();
+    setCarouselIndex(i => (i - 1 + 4) % 4);
+  };
+
+  const goDot = (i) => {
+    pauseAuto();
+    setCarouselIndex(i);
+  };
 
   useEffect(() => {
-    const el = rrtRef.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.classList.add('hp-anim-visible');
-          observer.unobserve(el);
-        }
-      },
-      { threshold: 0.1 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
+    startAuto();
+    return () => { clearInterval(autoRef.current); clearTimeout(pauseRef.current); };
+  }, []);
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const el = document.getElementById(hash.slice(1));
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, []);
+
+  useEffect(() => {
+    const els = [rrtRef.current, processRef.current].filter(Boolean);
+    const observers = els.map(el => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            el.classList.add('hp-anim-visible');
+            observer.unobserve(el);
+          }
+        },
+        { threshold: 0.1 }
+      );
+      observer.observe(el);
+      return observer;
+    });
+    return () => observers.forEach(o => o.disconnect());
   }, []);
 
   return (
     <div className="hp">
 
       {/* ===================== HERO ===================== */}
-      <section className="hp-hero" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/tl237background.png)` }}>
+      <section className="hp-hero">
+        <video
+          className="hp-hero-video"
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster={`${process.env.PUBLIC_URL}/tl237background.png`}
+        >
+          <source src={`${process.env.PUBLIC_URL}/cityworkervideo.mp4`} type="video/mp4" />
+        </video>
         <div className="hp-hero-overlay"></div>
+        <div className="hp-hero-blue-tint"></div>
         <HpNav />
         <div className="hp-hero-content">
           <div className="hp-hero-left">
@@ -57,10 +122,49 @@ function HomepageScreen() {
             </div>
           </div>
           <div className="hp-hero-right">
-            <img src="/phoneimagehome.png" alt="RRT App" className="hp-phone-image" />
+            <div className="hp-carousel-wrapper">
+              <button className="hp-carousel-arrow hp-carousel-arrow--left" onClick={() => goPrev(true)} aria-label="Previous">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="15 18 9 12 15 6"/>
+                </svg>
+              </button>
+
+              <div className="hp-carousel-column">
+                <div className="hp-carousel">
+                  {carouselImages.map((src, i) => (
+                    <div
+                      key={src}
+                      className="hp-carousel-slide"
+                      style={{ transform: `translateX(${(i - carouselIndex) * 100}%)` }}
+                    >
+                      <img src={src} alt={`RRT App screen ${i + 1}`} />
+                    </div>
+                  ))}
+                </div>
+                <div className="hp-carousel-dots">
+                  {carouselImages.map((_, i) => (
+                    <button
+                      key={i}
+                      className={`hp-carousel-dot${i === carouselIndex ? ' hp-carousel-dot--active' : ''}`}
+                      onClick={() => goDot(i)}
+                      aria-label={`Go to slide ${i + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              <button className="hp-carousel-arrow hp-carousel-arrow--right" onClick={() => goNext(true)} aria-label="Next">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="9 18 15 12 9 6"/>
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </section>
+
+      {/* ===================== PARALLAX STRIP ===================== */}
+      <div className="hp-parallax-strip" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/tl237background.png)` }}></div>
 
       {/* ===================== WHAT IS RRT ===================== */}
       <section id="what-is-rrt" className="hp-section">
@@ -98,26 +202,30 @@ function HomepageScreen() {
         </div>
       </section>
 
+      {/* ===================== PARALLAX STRIP ===================== */}
+      <div className="hp-parallax-strip" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/tl237background.png)` }}></div>
+
       {/* ===================== THE RRT PROCESS ===================== */}
-      <section id="the-rrt-process" className="hp-section">
-        <div className="hp-section-header">
-          <h2>THE RRT PROCESS</h2>
-        </div>
+      <section id="rrt-process" className="hp-section">
         <div className="hp-section-body">
-          <p>
+          <div className="hp-rrt-title-wrapper">
+            <h2 className="hp-rrt-title">THE RRT PROCESS</h2>
+          </div>
+          <div className="hp-slide-up-container" ref={processRef}>
+          <p className="hp-slide-item">
             When you or a loved one is involved in an accident, the aftermath can be overwhelming and chaotic.
             Amidst the physical pain, emotional distress, and confusion, it's essential to remember that gathering
             evidence is crucial to building a strong personal injury claim. Whether it's a workplace injury, auto
             accident, or slip and fall incident, the evidence you collect can significantly impact the outcome of
             your case.
           </p>
-          <p>
+          <p className="hp-slide-item">
             Teamsters Local 237 engaged the Rapid Response Team to assist with post-accident critical steps because
             we understand the importance of preserving evidence and providing other assistance and resources because
             it can make or break any subsequent claims for personal injuries.
           </p>
 
-          <div className="hp-process-grid">
+          <div className="hp-process-grid hp-slide-item">
 
             {/* ESTABLISHING LIABILITY */}
             <div className="hp-process-item">
@@ -267,8 +375,13 @@ function HomepageScreen() {
             </div>
 
           </div>
+
+          </div>{/* end hp-slide-up-container */}
         </div>
       </section>
+
+      {/* ===================== PARALLAX STRIP ===================== */}
+      <div className="hp-parallax-strip" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/tl237background.png)` }}></div>
 
       {/* ===================== CALL BANNER ===================== */}
       <div className="hp-call-banner">
