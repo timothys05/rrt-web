@@ -23,7 +23,7 @@ function ContactScreen() {
             <div className="hp-contact-col">
               <h3>ADDRESS</h3>
               <p>
-                Young Law Group<br />
+                Rapid Response Team<br />
                 3031C Walton Rd Suite 301<br />
                 Plymouth Meeting, PA 19462
               </p>
@@ -35,7 +35,7 @@ function ContactScreen() {
             <div className="hp-contact-col">
               <h3>CONTACT US</h3>
               <p>
-                <a href="mailto:eyoung@young-lawgroup.com">eyoung@young-lawgroup.com</a>
+                <a href="mailto:eric@rapidresponseteamlawyers.com">eric@rapidresponseteamlawyers.com</a>
               </p>
             </div>
           </div>
