@@ -90,13 +90,13 @@ html {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-left: -16px;
 }
 
 .hp-nav-logo-rrt {
   height: 72px;
   width: auto;
   object-fit: contain;
+  margin-left: -16px;
 }
 
 .hp-nav-logo-subtitle {
