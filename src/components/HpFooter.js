@@ -6,7 +6,7 @@ function HpFooter() {
         COPYRIGHT &copy; 2023 YOUNG LAW GROUP | <a href="/privacy">PRIVACY POLICY</a>
       </p>
       <p className="hp-footer-disclaimer">
-        Young Law Group, P.C. (YLG), catering to labor unions and workers in Pennsylvania and New Jersey, has
+        The Rapid Response Team is a worker safety platform operated by Pond Lehocky Giordano, Inc., and Young Law Group, P.C., catering to labor unions and workers in Pennsylvania and New Jersey, has
         established the Rapid Response Team to provide urgent legal and investigative assistance for workplace
         incidents. Maintaining strict confidentiality, YLG advises that website information and preliminary
         interactions do not constitute an attorney-client relationship, which requires a formal agreement. For
