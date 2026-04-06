@@ -3,7 +3,7 @@ function HpFooter() {
     <footer className="hp-footer">
       <img src="/tl237rrtlogo.png" alt="RRT" className="hp-footer-logo" />
       <p className="hp-footer-copyright">
-        COPYRIGHT &copy; 2023 YOUNG LAW GROUP | <a href="/privacy">PRIVACY POLICY</a>
+        COPYRIGHT &copy; 2023 YOUNG LAW GROUP | <a href="/privacy-policy">PRIVACY POLICY</a>
       </p>
       <p className="hp-footer-disclaimer">
         The Rapid Response Team is a worker safety platform operated by Pond Lehocky Giordano, Inc., and Young Law Group, P.C., catering to labor unions and workers in Pennsylvania and New Jersey, has
