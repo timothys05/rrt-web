@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import HomepageScreen from './components/HomepageScreen';
 import GuideScreen from './components/GuideScreen';
 import ContactScreen from './components/ContactScreen';
+import DisclaimerScreen from './components/DisclaimerScreen';
+import PrivacyPolicyScreen from './components/PrivacyPolicyScreen';
 import ProfileScreen from './components/ProfileScreen';
 import ReportScreen from './components/ReportScreen';
 import LoadingScreen from './components/LoadingScreen';
@@ -19,6 +21,8 @@ function App() {
           <Route path="/" element={<HomepageScreen />} />
           <Route path="/guide" element={<GuideScreen />} />
           <Route path="/contact" element={<ContactScreen />} />
+          <Route path="/disclaimer" element={<DisclaimerScreen />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyScreen />} />
           <Route path="/app" element={<ProfileScreen />} />
           <Route path="/profile" element={<ProfileScreen />} />
           <Route path="/report" element={<ReportScreen />} />
