@@ -23,7 +23,10 @@ function HpNav({ page }) {
     <nav className={`hp-nav${page ? ' hp-nav--page' : ''}${scrolled ? ' hp-nav--scrolled' : ''}${menuOpen ? ' hp-nav--open' : ''}`}>
       <Link to="/" className="hp-nav-logo-combo" onClick={close}>
         <img src="/tl237rrtlogo.png" alt="Teamsters Local 237" className="hp-nav-logo-badge" />
-        <img src="/rrtlogoweb.png" alt="RRT" className="hp-nav-logo-rrt" />
+        <div className="hp-nav-logo-rrt-wrap">
+          <img src="/rrtlogoweb.png" alt="RRT" className="hp-nav-logo-rrt" />
+          <span className="hp-nav-logo-subtitle">Teamsters Local 237</span>
+        </div>
       </Link>
 
       <button
