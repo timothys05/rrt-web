@@ -104,9 +104,10 @@ html {
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.08em;
-  color: #7ab3d4;
+  color: #ffffff;
   text-transform: uppercase;
   margin-top: -4px;
+  padding-left: 13px;
   white-space: nowrap;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
