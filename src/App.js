@@ -5,6 +5,7 @@ import GuideScreen from './components/GuideScreen';
 import ContactScreen from './components/ContactScreen';
 import DisclaimerScreen from './components/DisclaimerScreen';
 import PrivacyPolicyScreen from './components/PrivacyPolicyScreen';
+import TermsScreen from './components/TermsScreen';
 import ProfileScreen from './components/ProfileScreen';
 import ReportScreen from './components/ReportScreen';
 import LoadingScreen from './components/LoadingScreen';
@@ -23,6 +24,7 @@ function App() {
           <Route path="/contact" element={<ContactScreen />} />
           <Route path="/disclaimer" element={<DisclaimerScreen />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyScreen />} />
+          <Route path="/terms" element={<TermsScreen />} />
           <Route path="/app" element={<ProfileScreen />} />
           <Route path="/profile" element={<ProfileScreen />} />
           <Route path="/report" element={<ReportScreen />} />
