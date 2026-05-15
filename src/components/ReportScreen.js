@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, useLocation, Navigate, Link } from 'react-router-dom';
 import JSZip from 'jszip';
+import { sendSMS } from '../smsService';
 
 // Strip trailing slash from URL; strip leading '?' from SAS token if present
 const AZURE_STORAGE_URL = (process.env.REACT_APP_AZURE_URL || '').replace(/\/$/, '');
@@ -100,6 +101,10 @@ function ReportScreen() {
 
       if (!response.ok) {
         throw new Error(`Upload failed (${response.status} ${response.statusText})`);
+      }
+
+      if (prevState.profile.optInSMS && prevState.profile.phone) {
+        await sendSMS(prevState.profile.phone);
       }
 
       setSubmitted(true);
