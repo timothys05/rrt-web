@@ -103,6 +103,7 @@ function ReportScreen() {
         throw new Error(`Upload failed (${response.status} ${response.statusText})`);
       }
 
+      console.log('optInSMS:', prevState.profile.optInSMS, 'phone:', prevState.profile.phone);
       if (prevState.profile.optInSMS && prevState.profile.phone) {
         await sendSMS(prevState.profile.phone);
       }
