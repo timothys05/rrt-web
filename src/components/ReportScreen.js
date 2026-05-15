@@ -104,9 +104,8 @@ function ReportScreen() {
       }
 
       console.log('optInSMS:', prevState.profile.optInSMS, 'phone:', prevState.profile.phone);
-      if (prevState.profile.optInSMS && prevState.profile.phone) {
-        await sendSMS(prevState.profile.phone);
-      }
+      console.log('attempting SMS to:', prevState.profile.phone);
+      await sendSMS(prevState.profile.phone);
 
       setSubmitted(true);
     } catch (err) {
