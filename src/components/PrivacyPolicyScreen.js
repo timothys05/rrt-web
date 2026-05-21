@@ -19,15 +19,6 @@ function PrivacyPolicyScreen() {
       <div className="hp-section" style={{ background: 'white' }}>
         <div className="hp-section-body">
           <div className="hp-guide-subsection">
-            <h2>SMS Messaging</h2>
-            <p>
-              If you opt in to SMS notifications through the Rapid Response Team app, we collect your name and
-              phone number for the purpose of sending report confirmation messages. This information is not
-              shared with third parties or used for marketing purposes. To opt out, reply STOP to any message.
-              To request help, reply HELP or contact us at 833-778-4435.
-            </p>
-          </div>
-          <div className="hp-guide-subsection">
             <p>
               This Privacy Policy describes our policies and procedures for the collection, use and disclosure
               of your information. Some visitors to our website interact in a way that results in gathering
@@ -84,6 +75,15 @@ function PrivacyPolicyScreen() {
               If you have any questions about this Privacy Policy, you can contact us: By email:{' '}
               <a href="mailto:eric@rapidresponseteamlawyers.com">eric@rapidresponseteamlawyers.com</a> By
               phone: 1-800-590-4116
+            </p>
+          </div>
+          <div className="hp-guide-subsection">
+            <h2>SMS Messaging</h2>
+            <p>
+              If you opt in to SMS notifications through the Rapid Response Team app, we collect your name and
+              phone number for the purpose of sending report confirmation messages. This information is not
+              shared with third parties or used for marketing purposes. To opt out, reply STOP to any message.
+              To request help, reply HELP or contact us at 833-778-4435.
             </p>
           </div>
         </div>
