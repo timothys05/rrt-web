@@ -76,8 +76,6 @@ function PrivacyPolicyScreen() {
               <a href="mailto:eric@rapidresponseteamlawyers.com">eric@rapidresponseteamlawyers.com</a> By
               phone: 1-800-590-4116
             </p>
-          </div>
-          <div className="hp-guide-subsection">
             <p>
               <strong>SMS Messaging.</strong> If you opt in to SMS notifications through the Rapid Response
               Team app, we collect your name and phone number for the purpose of sending report confirmation
