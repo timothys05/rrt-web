@@ -113,12 +113,11 @@ html {
 }
 
 .hp-nav-logo-slogan {
-  height: 82px;
+  height: 110px;
   width: auto;
   object-fit: contain;
-  margin-left: 18px;
-  padding-left: 18px;
-  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  margin-left: -12px;
+  padding-left: 0;
 }
 
 .hp-nav-links {
