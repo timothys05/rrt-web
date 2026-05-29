@@ -112,6 +112,15 @@ html {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
+.hp-nav-logo-slogan {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+  margin-left: 18px;
+  padding-left: 18px;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+
 .hp-nav-links {
   display: flex;
   gap: 32px;

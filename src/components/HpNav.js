@@ -27,6 +27,7 @@ function HpNav({ page }) {
           <img src="/rrtlogoweb.png" alt="RRT" className="hp-nav-logo-rrt" />
           <span className="hp-nav-logo-subtitle">Teamsters Local 237</span>
         </div>
+        <img src="/whenworkinjurieshappen-left.png" alt="When Work Injuries Happen, We Respond" className="hp-nav-logo-slogan" />
       </Link>
 
       <button
