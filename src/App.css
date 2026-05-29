@@ -343,13 +343,6 @@ legend {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-.rrt-loader-slogan {
-  width: 200px;
-  height: auto;
-  object-fit: contain;
-  margin-bottom: 8px;
-}
-
 .rrt-loader-logo {
   width: 110px;
   height: 110px;
