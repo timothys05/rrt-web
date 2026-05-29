@@ -12,7 +12,6 @@ function LoadingScreen({ onDone }) {
   return (
     <div className={`rrt-loader${fading ? ' rrt-loader--fade' : ''}`}>
       <div className="rrt-loader-content">
-        <img src="/whenworkinjurieshappen-centered.png" alt="When Work Injuries Happen, We Respond" className="rrt-loader-slogan" />
         <img src="/tl237rrtlogo.png" alt="RRT" className="rrt-loader-logo" />
         <div className="rrt-loader-bar">
           <div className="rrt-loader-bar-fill" />
